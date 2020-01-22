@@ -22,13 +22,6 @@
           "description": "Storage Account's Resource Group."
        }
     },
-    "fwAvSet": {
-       "type": "string",
-       "metadata": {
-          "description": "EXISTING Availability Set name for Firewalls"
-       },
-       "defaultValue": "ARAFW-AS"
-    },
     "vmSize": {
        "type": "string",
        "allowedValues": [
