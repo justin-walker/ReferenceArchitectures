@@ -7,7 +7,7 @@
        "metadata": {
           "description": "Name of VM-Series FW in the Azure portal"
        },
-       "defaultValue": "ARA-VMFW1"
+       "defaultValue": "palo-alto-fw1"
     },
     "storageAccountName": {
       "type": "string",
@@ -17,7 +17,7 @@
     },
     "storageAccountExistingRG": {
        "type": "string",
-       "defaultValue" : "",
+       "defaultValue" : "PaloAlto-Transit",
        "metadata": {
           "description": "Storage Account's Resource Group."
        }
@@ -72,109 +72,109 @@
        "metadata": {
           "description": "Firewall License Model"
        },
-       "defaultValue": "bundle2"
+       "defaultValue": "byol"
     },
     "virtualNetworkName": {
       "type": "string",
       "metadata": {
         "description": "Name of the EXISTING Virtual Network (VNET)"
       },
-      "defaultValue": "AzureRefArch-VNET"
+      "defaultValue": "PaloAlto-Trans-VNet"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.0.0/16",
       "metadata": {
         "description": "EXISTING Virtual network address CIDR"
       }
     },
     "virtualNetworkExistingRGName": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "PaloAlto-Transit",
       "metadata": {
         "description": "Name of resource group of EXISTING VNET"
       }
     },
     "subnet0Name": {
       "type": "string",
-      "defaultValue": "Management",
+      "defaultValue": "Transit-Management",
       "metadata": {
         "description": "EXISTING Subnet for Management"
       }
     },
     "subnet1Name": {
       "type": "string",
-      "defaultValue": "Public",
+      "defaultValue": "Transit-Public",
       "metadata": {
         "description": "Public EXISTING Subnet"
       }
     },
     "subnet2Name": {
       "type": "string",
-      "defaultValue": "Private",
+      "defaultValue": "Transit-Private",
       "metadata": {
         "description": "Private EXISTING Subnet"
       }
     },
     "subnet3Name": {
       "type": "string",
-      "defaultValue": "VPN",
+      "defaultValue": "Transit-VPN",
       "metadata": {
         "description": "VPN (backhaul) EXISTING Subnet"
       }
     },
     "subnet0Prefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.255.0/24",
       "metadata": {
         "description": "EXISTING Management subnet CIDR"
       }
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "172.16.1.0/24",
+      "defaultValue": "10.110.129.0/24",
       "metadata": {
         "description": "EXISTING Public subnet CIDR"
       }
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "10.5.0.0/24",
+      "defaultValue": "10.110.0.0/24",
       "metadata": {
         "description": "EXISTING Private subnet CIDR"
       }
     },
     "subnet3Prefix": {
       "type": "string",
-      "defaultValue": "10.5.15.0/24",
+      "defaultValue": "10.110.254.0/24",
       "metadata": {
         "description": "EXISTING VPN subnet CIDR"
       }
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "192.168.1.6",
+      "defaultValue": "10.110.255.4",
       "metadata": {
         "description": "Management subnet static address"
       }
     },
     "subnet1StartAddress": {
       "type": "string",
-      "defaultValue": "172.16.1.6",
+      "defaultValue": "10.110.129.4",
       "metadata": {
         "description": "Public subnet static address"
       }
     },
     "subnet2StartAddress": {
       "type": "string",
-      "defaultValue": "10.5.0.6",
+      "defaultValue": "10.110.0.4",
       "metadata": {
         "description": "Private subnet static address"
       }
     },
     "subnet3StartAddress": {
       "type": "string",
-      "defaultValue": "10.5.15.6",
+      "defaultValue": "10.110.254.4",
       "metadata": {
         "description": "VPN subnet static address"
       }
@@ -200,7 +200,7 @@
     },
     "nsgName": {
       "type": "string",
-      "defaultValue": "DefaultNSG",
+      "defaultValue": "AllowManagement-Subnet",
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
