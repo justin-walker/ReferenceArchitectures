@@ -7,17 +7,18 @@
        "metadata": {
           "description": "Name of VM-Series FW in the Azure portal"
        },
-       "defaultValue": "ARA-VMFW1"
+       "defaultValue": "palo-alto-fw1"
     },
     "storageAccountName": {
       "type": "string",
       "metadata": {
         "description": "Name of the existing storage account used to store the VM's disks"
-      }
+      },
+      "defaultValue" : "paloaltov2transit",
     },
     "storageAccountExistingRG": {
        "type": "string",
-       "defaultValue" : "",
+       "defaultValue" : "PaloAlto-Transit",
        "metadata": {
           "description": "Storage Account's Resource Group location."
        }
@@ -50,11 +51,11 @@
       "metadata": {
         "description": "Name of the Virtual Network (VNET)"
       },
-      "defaultValue": "AzureRefArch-VNET"
+      "defaultValue": "PaloAlto-Trans-VNet"
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.0.0/16",
       "metadata": {
         "description": "Virtual network address CIDR"
       }
@@ -68,84 +69,84 @@
     },
     "subnet0Name": {
       "type": "string",
-      "defaultValue": "Management",
+      "defaultValue": "Transit-Management",
       "metadata": {
         "description": "Subnet for Management"
       }
     },
     "subnet1Name": {
       "type": "string",
-      "defaultValue": "Public",
+      "defaultValue": "Transit-Public",
       "metadata": {
         "description": "Public subnet"
       }
     },
     "subnet2Name": {
       "type": "string",
-      "defaultValue": "Private",
+      "defaultValue": "Transit-Private",
       "metadata": {
         "description": "Private Subnet"
       }
     },
     "subnet3Name": {
       "type": "string",
-      "defaultValue": "VPN",
+      "defaultValue": "Transit-VPN",
       "metadata": {
         "description": "VPN Subnet for backhaul"
       }
     },
     "subnet0Prefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.110.255.0/24",
       "metadata": {
         "description": "Management subnet CIDR"
       }
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "172.16.1.0/24",
+      "defaultValue": "10.110.129.0/24",
       "metadata": {
         "description": "Public subnet CIDR"
       }
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "10.5.0.0/24",
+      "defaultValue": "10.110.0.0/24",
       "metadata": {
         "description": "Private subnet CIDR"
       }
     },
     "subnet3Prefix": {
       "type": "string",
-      "defaultValue": "10.5.15.0/24",
+      "defaultValue": "10.110.254.0/24",
       "metadata": {
         "description": "VPN subnet CIDR"
       }
     },
     "subnet0StartAddress": {
       "type": "string",
-      "defaultValue": "192.168.1.6",
+      "defaultValue": "10.110.255.4",
       "metadata": {
         "description": "Management subnet static address"
       }
     },
     "subnet1StartAddress": {
       "type": "string",
-      "defaultValue": "172.16.1.6",
+      "defaultValue": "10.110.129.4",
       "metadata": {
         "description": "Public subnet static address"
       }
     },
     "subnet2StartAddress": {
       "type": "string",
-      "defaultValue": "172.16.2.6",
+      "defaultValue": "10.110.0.4",
       "metadata": {
         "description": "Private subnet static address"
       }
     },
     "subnet3StartAddress": {
       "type": "string",
-      "defaultValue": "10.5.15.6",
+      "defaultValue": "10.110.254.4",
       "metadata": {
         "description": "VPN subnet static address"
       }
